@@ -1090,9 +1090,8 @@ This software is provided under the following terms:
 
 ### Support
 
-- **GitHub Issues**: https://github.com/yourusername/EvilTwin/issues
-- **Email**: support@example.com
-- **Discord**: https://discord.gg/example
+- **GitHub Issues**: https://github.com/Maoras-hue/EvilTwin/issues
+- **Email**: ifiwas1898617@gmail.com
 
 ### Documentation
 
