@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>WiFi Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📶</text></svg>">
+</head>
+<body>
+    <!-- Status Bar -->
+    <div class="status-bar">
+        <span class="wifi-icon">● ● ● ● ○</span>
+        <span class="network-name">Free_Public_WiFi</span>
+        <span class="signal-strength">Signal: Excellent</span>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo-container">
+                <svg class="wifi-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12.55a11 11 0 0114.08 0"/>
+                    <path d="M1.42 9a16 16 0 0121.16 0"/>
+                    <path d="M8.53 16.11a6 6 0 016.95 0"/>
+                    <line x1="12" y1="20" x2="12.01" y2="20"/>
+                </svg>
+                <span class="provider-name">Free Public WiFi</span>
+            </div>
+            <div class="header-badge">
+                <span class="badge">Secure</span>
+            </div>
+        </div>
+
+        <!-- Welcome Section -->
+        <div class="welcome-section">
+            <h1>Welcome to Free Public WiFi</h1>
+            <p class="subtitle">Please log in to access the internet</p>
+        </div>
+
+        <!-- Terms & Conditions -->
+        <div class="terms-box">
+            <div class="terms-header">
+                <span class="terms-icon">📋</span>
+                <span>Terms & Conditions</span>
+            </div>
+            <div class="terms-content">
+                <p>By using this WiFi network, you agree to:</p>
+                <ul>
+                    <li>Not use this network for illegal activities</li>
+                    <li>Not upload or download copyrighted material</li>
+                    <li>Not engage in hacking or unauthorized access</li>
+                    <li>Accept that usage is monitored</li>
+                </ul>
+                <div class="terms-check">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="accept_terms" id="accept_terms" required>
+                        <span class="checkmark"></span>
+                        I agree to the Terms & Conditions
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Login Form -->
+        <form action="/login" method="POST" id="loginForm">
+            <div class="form-group">
+                <label for="password">
+                    <span class="label-icon">🔒</span>
+                    Password
+                </label>
+                <div class="input-wrapper">
+                    <input type="password" id="password" name="password" 
+                           placeholder="Enter your password" required>
+                    <button type="button" class="toggle-password" id="togglePassword">
+                        <span class="eye-icon">👁</span>
+                    </button>
+                </div>
+                <div class="password-hint">
+                    <a href="#" class="forgot-link">Forgot password?</a>
+                </div>
+            </div>
+
+            <div class="form-group remember-me">
+                <label class="checkbox-label">
+                    <input type="checkbox" name="remember" id="remember" checked>
+                    <span class="checkmark"></span>
+                    Remember me on this device
+                </label>
+            </div>
+
+            <button type="submit" class="btn-primary" id="submitBtn">
+                <span class="btn-text">Connect to WiFi</span>
+                <span class="btn-loader" style="display:none;">⏳</span>
+            </button>
+        </form>
+
+        <!-- Divider -->
+        <div class="divider">
+            <span>or connect with</span>
+        </div>
+
+        <!-- Social Login -->
+        <div class="social-login">
+            <button class="social-btn facebook">
+                <svg viewBox="0 0 24 24" width="20" height="20">
+                    <path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+                <span>Facebook</span>
+            </button>
+            <button class="social-btn google">
+                <svg viewBox="0 0 24 24" width="20" height="20">
+                    <path fill="currentColor" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/>
+                    <path fill="currentColor" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                    <path fill="currentColor" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                    <path fill="currentColor" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                </svg>
+                <span>Google</span>
+            </button>
+        </div>
+
+        <!-- Guest Access -->
+        <div class="guest-access">
+            <a href="#" class="guest-link" id="guestLink">Continue as Guest</a>
+        </div>
+
+        <!-- Footer Links -->
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <span class="footer-dot">•</span>
+            <a href="#">Terms of Service</a>
+            <span class="footer-dot">•</span>
+            <a href="#">Contact Us</a>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <span class="footer-text">© 2024 Free Public WiFi</span>
+            <span class="footer-text">All rights reserved</span>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <div class="toast-content">
+            <span class="toast-icon">✅</span>
+            <span class="toast-message">Connecting to WiFi...</span>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
