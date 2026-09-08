@@ -276,7 +276,7 @@ EvilTwin/
 
 2. **Clone Repository**
    ```bash
-   git clone https://github.com/yourusername/EvilTwin.git
+   git clone https://github.com/Maoras-hue/EvilTwin.git
    cd EvilTwin
    ```
 
